@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-    before_action :set_track, only: [:edit, :update, :destroy]
+    before_action :set_artist, only: [:edit, :update, :destroy]
     def index
         @artists = Artist.all
     end
@@ -10,7 +10,6 @@ class ArtistsController < ApplicationController
 
     def create
         @artist = Artist.new(artist_params)
-        artist_params = params.require(:artist).permit(:permalink, :bio, :formed_at, :verified, :verified_at, :avatar_url, :cover_photo_url, :name)
 
         if @artist.save
             flash[:notice] = "A new artist has been added"
@@ -26,9 +25,8 @@ class ArtistsController < ApplicationController
     end
 
     def update
-        artist_params = params.require(:artist).permit(:permalink, :bio, :formed_at, :verified, :verified_at, :avatar_url, :cover_photo_url, :name)
 
-        if @arist.update(artist_params)
+        if @artist.update(artist_params)
             redirect_to artists_path
         else
             render :edit

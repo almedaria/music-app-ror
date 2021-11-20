@@ -1,0 +1,24 @@
+= form_with model: @album do |f|
+  = f.label :name
+  = f.text_field :name
+  
+  %br/
+  = f.label :cover_art_url
+  = f.text_area :cover_art_url
+
+  %br/
+
+  = f.label :length
+  = f.text_field :length
+
+  %br/
+
+  = f.label :kind
+  = f.text_field :kind
+
+  %br/  
+
+  = f.submit
+  
+  %br/
+  = link_to "Back to Albums", albums_path

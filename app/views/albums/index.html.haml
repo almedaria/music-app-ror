@@ -24,3 +24,9 @@
                = album.length 
             %td
                = album.kind
+            %td
+               = link_to "Edit", edit_album_path(album.id)
+               = link_to "Delete", album_path(album.id), method: :delete, data: {confirm: "Are you sure?"}
+
+%br/
+= link_to "Add Albums", new_album_path        
