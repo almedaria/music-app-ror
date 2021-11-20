@@ -10,13 +10,13 @@ class TracksController < ApplicationController
 
     def create
         @track = Track.new(track_params)
-        track_params = params.require(:track).permit(:title, :author, :content)
+        track_params = params.require(:track).permit(:url, :name, :credits)
 
         if @track.save
             flash[:notice] = "A new track has been added"
             redirect_to tracks_path
         else
-            flash[:error]= "There are some errors encountered"
+            flash[:error] = "There are some errors encountered"
             render :new
         end
     end
