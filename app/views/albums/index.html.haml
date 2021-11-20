@@ -1,1 +1,26 @@
 %h1 Albums
+
+%table
+   %thread
+      %th Name
+      %th Released
+      %th Released at
+      %th Cover Art URL 
+      %th Length
+      %th Kind
+  
+   %tbody
+      - @albums.each do |album|
+         %tr
+            %td
+               = album.name
+            %td
+               = album.released
+            %td
+               = album.released_at
+            %td
+               = album.cover_art_url.truncate(150)
+            %td
+               = album.length 
+            %td
+               = album.kind
