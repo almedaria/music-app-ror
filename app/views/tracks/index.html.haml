@@ -19,4 +19,11 @@
                = track.name
             %td
                = track.credits.truncate(150)
-        
+            %td
+               = track.available
+            %td
+               = link_to "Edit", edit_track_path(track.id)
+               = link_to "Delete", track_path(track.id), method: :delete, data: {confirm: "Are you sure?"}
+
+%br/
+= link_to "Add Tracks", new_track_path        

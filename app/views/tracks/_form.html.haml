@@ -1,0 +1,20 @@
+= form_with model: @track do |f|
+  = f.label :url
+  = f.text_area :url
+  
+  %br/
+  = f.label :name
+  = f.text_field :name
+
+  %br/
+
+  = f.label :credits
+  = f.text_area :credits
+
+  %br/
+
+  = f.submit
+  
+  %br/
+  = link_to "Back to Tracks", tracks_path
+ 
