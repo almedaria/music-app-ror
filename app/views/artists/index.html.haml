@@ -1,1 +1,29 @@
 %h1 Artists
+
+%table
+   %thread
+      %th Permalink
+      %th Bio
+      %th Formed at
+      %th Verified 
+      %th Verified at
+      %th Avatar URL 
+      %th Cover photo URL
+  
+   %tbody
+      - @artists.each do |artist|
+         %tr
+            %td
+               = artist.permalink
+            %td
+               = artist.bio.truncate(150)
+            %td
+               = artist.formed_at
+            %td
+               = artist.verified
+            %td
+               = artist.verified_at 
+            %td
+               = artist.avatar_url
+            %td
+               = artist.cover_photo_url

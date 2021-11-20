@@ -5,7 +5,7 @@ class CreateArtists < ActiveRecord::Migration[6.1]
       t.timestamps
       t.text :permalink
       t.text :bio
-      t.datetime :fromed_at
+      t.datetime :formed_at
       t.boolean :verified, default:false
       t.datetime :verified_at
       t.text :avatar_url
@@ -13,3 +13,4 @@ class CreateArtists < ActiveRecord::Migration[6.1]
     end
   end
 end
+r

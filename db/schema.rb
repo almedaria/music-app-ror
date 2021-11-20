@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2021_11_20_020141) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "permalink"
     t.text "bio"
-    t.datetime "fromed_at"
+    t.datetime "formed_at"
     t.boolean "verified", default: false
     t.datetime "verified_at"
     t.text "avatar_url"
