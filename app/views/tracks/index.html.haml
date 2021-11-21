@@ -2,7 +2,6 @@
 
 %table
    %thread
-      %th id
       %th url
       %th Name
       %th Credits 
@@ -11,8 +10,6 @@
    %tbody
       - @tracks.each do |track|
          %tr
-            %td
-               = track.id
             %td
                = track.url.truncate(150)
             %td
