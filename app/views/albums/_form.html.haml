@@ -1,20 +1,30 @@
 = form_with model: @album do |f|
   = f.label :name
   = f.text_field :name
-  
+
+  %br/
+
+  = f.label :released_at
+  = f.date_field :released_at
+
   %br/
   = f.label :cover_art_url
-  = f.text_area :cover_art_url
+  = f.url_field :cover_art_url
 
   %br/
 
   = f.label :length
-  = f.text_field :length
+  = f.time_field :length, {:ampm => false}
 
   %br/
 
   = f.label :kind
-  = f.text_field :kind
+  = f.radio_button :kind, 'Single'
+  = label :kind_single, 'Single'
+  = f.radio_button :kind, 'EP'
+  = label :kind_EP, 'EP'
+  = f.radio_button :kind, 'LP'
+  = label :kind_EP, 'LP' 
 
   %br/  
 
