@@ -35,7 +35,7 @@ class ArtistsController < ApplicationController
 
     def destroy
         @artist.destroy
-        redirect_to artist_path, notice: "The artist was successfully deleted"
+        redirect_to artists_path, notice: "The artist was successfully deleted"
     end
 
     private
@@ -45,7 +45,7 @@ class ArtistsController < ApplicationController
     end
 
     def artist_params
-        params.require(:artist).permit(:permalink, :bio, :formed_at, :verified, :verified_at, :avatar_url, :cover_photo_url, :name)
+        params.require(:artist).permit(:name, :permalink, :bio, :formed_at, :verified, :verified_at, :avatar_url, :cover_photo_url, )
     end
 
 end

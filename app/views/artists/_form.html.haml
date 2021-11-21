@@ -1,6 +1,7 @@
 = form_with model: @artist do |f|
   = f.label :name
   = f.text_field :name
+  %br/
 
   = f.label :permalink
   = f.text_field :permalink
@@ -11,13 +12,24 @@
 
   %br/
 
+  = f.label :formed_at
+  = f.date_field :formed_at
+
+  %br/
+
+  = f.label :verified_at
+  = f.date_field :verified_at
+
+  %br/
+
   = f.label :avatar_url
-  = f.text_area :avatar_url
+  = f.url_field :avatar_url
+
 
   %br/
 
   = f.label :cover_photo_url
-  = f.text_area :cover_photo_url
+  = f.url_field :cover_photo_url
 
   %br/
 

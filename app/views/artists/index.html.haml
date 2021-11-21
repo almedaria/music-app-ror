@@ -6,7 +6,7 @@
       %th Permalink
       %th Bio
       %th Formed at
-      %th Verified 
+      -# %th Verified - add default value 
       %th Verified at
       %th Avatar URL 
       %th Cover photo URL
@@ -22,8 +22,8 @@
                = artist.bio.truncate(150)
             %td
                = artist.formed_at
-            %td
-               = artist.verified
+            -# %td
+            -#    = artist.verified 
             %td
                = artist.verified_at 
             %td
