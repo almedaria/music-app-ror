@@ -1,15 +1,27 @@
+.page-title {
+  font-size: 30px;
+  margin: 10px 0;
+  color: #4f5c7c;
+  text-align: left;
+  padding-left: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
 .container {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 10px;
   padding-right: 10px;
+  max-height: 500px;
+  overflow-y: scroll;
 }
 
 .responsive-table {
   li {
     border-radius: 3px;
-    padding: 15px 30px;
+    padding: 15px 5px;
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 15px;

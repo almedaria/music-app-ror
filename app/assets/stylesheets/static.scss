@@ -3,9 +3,11 @@ body {
 }
 
 .main-header {
-  margin-top: 50px;
+  margin-top: 30px;
   color: aliceblue;
   font-size: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
 }
 
 .main-header:hover {
@@ -23,7 +25,7 @@ body {
   width: 250px;
   background-color: #4f5c75;
   color: aliceblue;
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 12px 0;
   cursor: pointer;
 }
