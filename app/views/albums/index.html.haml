@@ -16,11 +16,11 @@
             %td
                = album.name
             %td
-               = album.released_at
+               = album.released_at.year
             %td
                = album.cover_art_url.truncate(150)
             %td
-               = album.length 
+               = album.length.min
             %td
                = album.kind
             %td

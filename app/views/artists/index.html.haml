@@ -10,8 +10,8 @@
       %th Formed at
       -# %th Verified - add default value 
       %th Verified at
-      %th Avatar URL 
-      %th Cover photo URL
+      -# %th Avatar URL 
+      -# %th Cover photo URL
   
    %tbody
       - @artists.each do |artist|
@@ -23,15 +23,15 @@
             %td
                = artist.bio.truncate(150)
             %td
-               = artist.formed_at
+               = artist.formed_at.year
             -# %td
             -#    = artist.verified 
             %td
-               = artist.verified_at 
-            %td
-               = artist.avatar_url
-            %td
-               = artist.cover_photo_url
+               = artist.verified_at.year
+            -# %td
+            -#    = artist.avatar_url
+            -# %td
+            -#    = artist.cover_photo_url
             %td
                = link_to "Edit", edit_artist_path(artist.id)
                = link_to "Delete", artist_path(artist.id), method: :delete, data: {confirm: "Are you sure?"}
