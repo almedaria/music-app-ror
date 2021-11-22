@@ -31,11 +31,10 @@
 %br/
 .p.sub-button=link_to "Add Album", new_album_path       
 
-%br/
-= link_to "Go to albums", albums_path
-
-%br/
-= link_to "Go to Tracks", tracks_path
-
-%br/
-= link_to "Back to Home", root_path
+.footer-container
+  .footer-text
+    = link_to "Go to albums", albums_path
+  .footer-text
+    = link_to "Go to Tracks", tracks_path
+  .footer-text
+    = link_to "Back to Home", root_path
