@@ -1,10 +1,11 @@
-%h1 main page
+.div.main-header Music App
 
 %br/
-= link_to "Artists", artists_path
 
-%br/
-= link_to "Albums", albums_path
+.div.button-container
 
-%br/
-= link_to "Tracks", tracks_path
+  .span.main-button=link_to "Artists", artists_path
+
+  .span.main-button=link_to "Albums", albums_path
+
+  .span.main-button=link_to "Tracks", tracks_path
