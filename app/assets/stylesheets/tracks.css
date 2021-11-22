@@ -3,3 +3,8 @@
   margin: 20px 0;
   color: #ff576b;
 }
+
+.table-header {
+  font-size: larger;
+  padding: 12px 30px;
+}

@@ -7,7 +7,7 @@
       %th url
       %th Name
       %th Credits 
-      -# %th Available
+      %th Available
   
    %tbody
       - @tracks.each do |track|
@@ -18,15 +18,14 @@
                = track.name
             %td
                = track.credits.truncate(150)
-            -# %td
-            -#    = track.available
+            %td
+               = track.available
             %td
                = link_to "Edit", edit_track_path(track.id)
                = link_to "Delete", track_path(track.id), method: :delete, data: {confirm: "Are you sure?"}
 
 %br/
-
-.p.main-button=link_to "Add Tracks", new_track_path        
+.p.main-button= link_to "Add Tracks", new_track_path        
 
 %br/
 = link_to "Go to Artists", artists_path
