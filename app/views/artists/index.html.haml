@@ -1,4 +1,6 @@
-%h1 Artists
+.div.main-header Music App
+
+.div.page-title Artists
 
 %table
    %thread
@@ -35,7 +37,8 @@
                = link_to "Delete", artist_path(artist.id), method: :delete, data: {confirm: "Are you sure?"}
 
 %br/
-= link_to "Add Artist", new_artist_path
+
+.p.main-button=link_to "Add Artist", new_artist_path  
 
 %br/
 = link_to "Go to Albums", albums_path
