@@ -2,27 +2,28 @@
 
 .div.page-title Tracks
 
-%table
-   %thread
-      %th url
-      %th Name
-      %th Credits 
-      %th Available
-  
-   %tbody
+.container
+  %ul.responsive-table
+    %li.table-header
+      .col.col-1 url
+      .col.col-1 Name
+      .col.col-1 Credits
+      .col.col-1 Available
+      .col.col-1 Actions
+    %tbody
       - @tracks.each do |track|
-         %tr
-            %td
-               = track.url.truncate(150)
-            %td
-               = track.name
-            %td
-               = track.credits.truncate(150)
-            %td
-               = track.available
-            %td
-               = link_to "Edit", edit_track_path(track.id)
-               = link_to "Delete", track_path(track.id), method: :delete, data: {confirm: "Are you sure?"}
+        %li.table-row
+          .col.col-1{"data-label" => "URL"}
+            = track.url.truncate(150)
+          .col.col-1{"data-label" => "Name"}
+            = track.name
+          .col.col-1{"data-label" => "Credits"}
+            = track.credits.truncate(150)
+          .col.col-1{"data-label" => "Available"}
+            = track.available
+          .col.col-1{"data-label" => "Actions"}
+            = link_to "Edit", edit_track_path(track.id)
+            = link_to "Delete", track_path(track.id), method: :delete, data: {confirm: "Are you sure?"}
 
 %br/
 .p.main-button= link_to "Add Tracks", new_track_path        
