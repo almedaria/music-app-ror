@@ -8,8 +8,11 @@
   = f.date_field :released_at
 
   %br/
-  = f.label :cover_art_url
-  = f.url_field :cover_art_url
+  -# = f.label :cover_art_url
+  -# = f.url_field :cover_art_url
+  = f.label :image
+  = f.file_field :image
+
 
   %br/
 
