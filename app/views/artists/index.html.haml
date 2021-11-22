@@ -2,43 +2,35 @@
 
 .div.page-title Artists
 
-%table
-   %thread
-      %th Name
-      %th Permalink
-      %th Bio
-      %th Formed at
-      -# %th Verified - add default value 
-      %th Verified at
-      -# %th Avatar URL 
-      -# %th Cover photo URL
-  
-   %tbody
+.container
+  %ul.responsive-table
+    %li.table-header
+      .col.col-2 Name
+      .col.col-2 Permalink
+      .col.col-2 Bio
+      .col.col-2 Formed at
+      .col.col-2 Verified at
+      .col.col-2 Actions     
+    %tbody
       - @artists.each do |artist|
-         %tr
-            %td
-               = artist.name
-            %td
-               = artist.permalink
-            %td
-               = artist.bio.truncate(150)
-            %td
-               = artist.formed_at.year
-            -# %td
-            -#    = artist.verified 
-            %td
-               = artist.verified_at.year
-            -# %td
-            -#    = artist.avatar_url
-            -# %td
-            -#    = artist.cover_photo_url
-            %td
-               = link_to "Edit", edit_artist_path(artist.id)
-               = link_to "Delete", artist_path(artist.id), method: :delete, data: {confirm: "Are you sure?"}
+        %li.table-row
+          .col.col-2{"data-label" => "Name"}
+            = artist.name
+          .col.col-2{"data-label" => "Permalink"}
+            = artist.permalink
+          .col.col-2{"data-label" => "Bio"}
+            = artist.bio.truncate(150)
+          .col.col-2{"data-label" => "Formed at"}
+            = artist.formed_at.year
+          .col.col-2{"data-label" => "Verified at"}
+            = artist.verified_at.year
+          .col.col-2{"data-label" => "Actions"}  
+            = link_to "Edit", edit_artist_path(artist.id)
+            = link_to "Delete", artist_path(artist.id), method: :delete, data: {confirm: "Are you sure?"}
 
 %br/
 
-.p.main-button=link_to "Add Artist", new_artist_path  
+.p.sub-button=link_to "Add Artist", new_artist_path  
 
 %br/
 = link_to "Go to Albums", albums_path
