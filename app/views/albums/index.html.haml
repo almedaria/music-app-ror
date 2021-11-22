@@ -2,36 +2,37 @@
 
 .div.page-title Albums
 
-%table
-   %thread
-      %th Name
-      %th Released at
-      %th Cover Art URL 
-      %th Length
-      %th Kind
-  
-   %tbody
+.container
+  %ul.responsive-table
+    %li.table-header
+      .col.col-2 Cover Art
+      .col.col-2 Name
+      .col.col-2 Released at
+      .col.col-2 Length
+      .col.col-2 Kind
+      .col.col-2 Actions     
+    %tbody
       - @albums.each do |album|
-         %tr
-            -# %td
-            -#    = image_tag album.image
-            %td
-               = album.name
-            %td
-               = album.released_at.year
-            %td
-               = album.length
-            %td
-               = album.kind
-            %td
-               = link_to "Edit", edit_album_path(album.id)
-               = link_to "Delete", album_path(album.id), method: :delete, data: {confirm: "Are you sure?"}
+        %li.table-row
+          .col.col-2{"data-label" => "Cover Art"}
+            = album.cover_art_url
+          .col.col-2{"data-label" => "Name"}
+            = album.name
+          .col.col-2{"data-label" => "Released at"}
+            = album.released_at.year
+          .col.col-2{"data-label" => "Length"}
+            = album.length
+          .col.col-2{"data-label" => "kind"}
+            = album.kind
+          .col.col-2{"data-label" => "Actions"}  
+            = link_to "Edit", edit_album_path(album.id)
+            = link_to "Delete", album_path(album.id), method: :delete, data: {confirm: "Are you sure?"}
 
 %br/
-.p.main-button=link_to "Add Album", new_album_path       
+.p.sub-button=link_to "Add Album", new_album_path       
 
 %br/
-= link_to "Go to Artists", artists_path
+= link_to "Go to albums", albums_path
 
 %br/
 = link_to "Go to Tracks", tracks_path
