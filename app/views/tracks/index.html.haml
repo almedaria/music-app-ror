@@ -8,7 +8,6 @@
       .col.col-1 url
       .col.col-1 Name
       .col.col-1 Credits
-      .col.col-1 Available
       .col.col-1 Actions
     %tbody
       - @tracks.each do |track|
@@ -19,8 +18,6 @@
             = track.name
           .col.col-1{"data-label" => "Credits"}
             = track.credits.truncate(150)
-          .col.col-1{"data-label" => "Available"}
-            = track.available
           .col.col-1{"data-label" => "Actions"}
             = link_to "Edit", edit_track_path(track.id)
             = link_to "Delete", track_path(track.id), method: :delete, data: {confirm: "Are you sure?"}
