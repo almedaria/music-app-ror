@@ -30,6 +30,11 @@
 
   %br/  
 
+
+  - @artist.errors.full_messages.each do |error|
+    .flash-notice
+      = error
+
   = f.submit :class => "form-button"
   
 .footer-container
