@@ -1,3 +1,4 @@
 class Track < ApplicationRecord
-    validates :url, :name, :credits, presence:true
+    validates :url, :name, uniqueness: true, presence: true
+    validates :credits, presence:true
 end

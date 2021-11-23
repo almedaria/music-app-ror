@@ -11,7 +11,12 @@
     = f.label :credits, class: "label-class"
     = f.text_area :credits, class: "form-field"
 
-  %br/  
+  %br/
+  
+  - @track.errors.full_messages.each do |error|
+    .flash-notice
+      = error  
+
 
   = f.submit :class => "form-button"
   
