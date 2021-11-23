@@ -1,37 +1,40 @@
-= form_with model: @album do |f|
-  = f.label :name
-  = f.text_field :name
+= form_with model: @album, html: {class: "form-container"} do |f|
+  .field-container
+    = f.label :name, class: "label-class"
+    = f.text_field :name, class: "form-field"
 
-  %br/
+  .field-container
+    = f.label :released_at, class: "label-class"
+    = f.date_field :released_at, class: "form-field"
 
-  = f.label :released_at
-  = f.date_field :released_at
-
-  %br/
-  -# = f.label :cover_art_url
-  -# = f.url_field :cover_art_url
-  = f.label :image
-  = f.file_field :image
+  .field-container 
+    = f.label :image, class: "label-class"
+    = f.file_field :image, class: "form-field"
 
 
-  %br/
+  .field-container
+    = f.label :length, class: "label-class"
+    = f.number_field :length, class: "form-field"
 
-  = f.label :length
-  = f.number_field :length
+  .radio-button-container
+    = f.label :kind, class: "label-class"
 
-  %br/
+    .radio-button
+      = f.radio_button :kind, 'Single'
+      = label :kind_single, 'Single', class: "radio-button"
 
-  = f.label :kind
-  = f.radio_button :kind, 'Single'
-  = label :kind_single, 'Single'
-  = f.radio_button :kind, 'EP'
-  = label :kind_EP, 'EP'
-  = f.radio_button :kind, 'LP'
-  = label :kind_EP, 'LP' 
+    .radio-button
+      = f.radio_button :kind, 'EP'
+      = label :kind_EP, 'EP', class: "radio-button"
+
+    .radio-button
+      = f.radio_button :kind, 'LP'
+      = label :kind_EP, 'LP', class: "radio-button"
 
   %br/  
 
-  = f.submit
+  .sub-button
+    = f.submit
   
   %br/
   = link_to "Back to Albums", albums_path

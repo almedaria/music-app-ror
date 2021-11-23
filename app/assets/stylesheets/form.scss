@@ -1,0 +1,36 @@
+.form-container {
+  width: 450px;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.field-container {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20px;
+  height: 30px;
+  vertical-align: middle;
+}
+.label-class {
+  width: 150px;
+  text-align: left;
+  padding-right: 30px;
+}
+
+.form-field {
+  width: 100%;
+  padding: 0 30px;
+}
+
+.radio-button-container {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: start;
+}
+.radio-button {
+  flex-direction: column;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  padding: 0 5px;
+}
