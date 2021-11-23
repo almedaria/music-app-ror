@@ -5,6 +5,7 @@
 .container
   %ul.responsive-table
     %li.table-header
+      .col.col-1
       .col.col-1 url
       .col.col-1 Name
       .col.col-1 Credits
@@ -12,6 +13,8 @@
     %tbody
       - @tracks.each do |track|
         %li.table-row
+          .col.col-1
+            = image_tag "thumbnails/waves.png", size:"30x30"    
           .col.col-1{"data-label" => "URL"}
             = track.url.truncate(150)
           .col.col-1{"data-label" => "Name"}

@@ -5,8 +5,8 @@
 .container
   %ul.responsive-table
     %li.table-header
+      .col.col-2 
       .col.col-2 Name
-      .col.col-2 Permalink
       .col.col-2 Bio
       .col.col-2 Formed at
       .col.col-2 Verified at
@@ -14,10 +14,10 @@
     %tbody
       - @artists.each do |artist|
         %li.table-row
+          .col.col-2
+            = image_tag "thumbnails/user.png", size:"30x30"
           .col.col-2{"data-label" => "Name"}
             = artist.name
-          .col.col-2{"data-label" => "Permalink"}
-            = artist.permalink
           .col.col-2{"data-label" => "Bio"}
             = artist.bio.truncate(150)
           .col.col-2{"data-label" => "Formed at"}
