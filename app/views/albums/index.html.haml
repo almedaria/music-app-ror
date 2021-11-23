@@ -8,14 +8,14 @@
       .col.col-2 Cover Art
       .col.col-2 Name
       .col.col-2 Released at
-      .col.col-2 Length
+      .col.col-2 Lengths
       .col.col-2 Kind
       .col.col-2 Actions     
     %tbody
       - @albums.each do |album|
         %li.table-row
           .col.col-2{"data-label" => "Cover Art"}
-            = album.cover_art_url
+            = image_tag "thumbnails/musical-note.png", size:"30x30"
           .col.col-2{"data-label" => "Name"}
             = album.name
           .col.col-2{"data-label" => "Released at"}
