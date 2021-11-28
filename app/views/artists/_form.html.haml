@@ -1,39 +1,48 @@
-= form_with model: @artist do |f|
-  = f.label :name
-  = f.text_field :name
-  %br/
+= form_with model: @artist, html: {class: "form-container"} do |f|
+  .field-container
+    = f.label :name, class: "label-class"
+    = f.text_field :name, class: "form-field"
 
-  = f.label :permalink
-  = f.text_field :permalink
+  .field-container
+    = f.label :permalink, class: "label-class"
+    = f.text_field :permalink, class: "form-field"
+
+  .field-container 
+    = f.label :bio, class: "label-class"
+    = f.text_area :bio, class: "form-field"
+
+
+  .field-container
+    = f.label :formed_at, class: "label-class"
+    = f.date_field :formed_at, class: "form-field"
+
+  .field-container
+    = f.label :verified_at, class: "label-class"
+    = f.date_field :verified_at, class: "form-field"
+
+  .field-container
+    = f.label :avatar_url, class: "label-class"
+    = f.url_field :avatar_url, class: "form-field"
+
+  .field-container
+    = f.label :cover_photo_url, class: "label-class"
+    = f.url_field :cover_photo_url, class: "form-field"
+
+  %br/  
+
+
+  - @artist.errors.full_messages.each do |error|
+    .flash-notice
+      = error
+
+  = f.submit :class => "form-button"
   
-  %br/
-  = f.label :bio
-  = f.text_area :bio
-
-  %br/
-
-  = f.label :formed_at
-  = f.date_field :formed_at
-
-  %br/
-
-  = f.label :verified_at
-  = f.date_field :verified_at
-
-  %br/
-
-  = f.label :avatar_url
-  = f.url_field :avatar_url
-
-
-  %br/
-
-  = f.label :cover_photo_url
-  = f.url_field :cover_photo_url
-
-  %br/
-
-  = f.submit
-  
-  %br/
-  = link_to "Back to Artists", artists_path
+.footer-container
+  .footer-text
+    = link_to "Home", root_path
+  .footer-text 
+    = link_to "Albums", albums_path
+  .footer-text
+    = link_to "Artists", artists_path
+  .footer-text
+    = link_to "Tracks", tracks_path

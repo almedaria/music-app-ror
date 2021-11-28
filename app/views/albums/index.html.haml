@@ -1,38 +1,43 @@
-%h1 Albums
+.div.main-header Music App
 
-%table
-   %thread
-      %th Name
-      %th Released at
-      %th Cover Art URL 
-      %th Length
-      %th Kind
-  
-   %tbody
+.div.page-title Albums
+
+.container
+  %ul.responsive-table
+    %li.table-header
+      .col.col-2 
+      .col.col-2 Name
+      .col.col-2 Released at
+      .col.col-2 Lengths
+      .col.col-2 Kind
+      .col.col-2 Actions     
+    %tbody
       - @albums.each do |album|
-         %tr
-            %td
-               = album.name
-            %td
-               = album.released_at
-            %td
-               = album.cover_art_url.truncate(150)
-            %td
-               = album.length 
-            %td
-               = album.kind
-            %td
-               = link_to "Edit", edit_album_path(album.id)
-               = link_to "Delete", album_path(album.id), method: :delete, data: {confirm: "Are you sure?"}
+        %li.table-row
+          .col.col-2{"data-label" => "Cover Art"}
+            = image_tag "thumbnails/musical-note.png", size:"30x30"
+          .col.col-2{"data-label" => "Name"}
+            = album.name
+          .col.col-2{"data-label" => "Released at"}
+            = album.released_at.year
+          .col.col-2{"data-label" => "Length"}
+            = album.length
+          .col.col-2{"data-label" => "kind"}
+            = album.kind
+          .col.col-2{"data-label" => "Actions"}  
+            = link_to "Edit", edit_album_path(album.id)
+            = link_to "Delete", album_path(album.id), method: :delete, data: {confirm: "Are you sure?"}
 
 %br/
-= link_to "Add Albums", new_album_path        
+.p.sub-button=link_to "Add Album", new_album_path       
 
-%br/
-= link_to "Go to Artists", artists_path
+.footer-container
+  .footer-text
+    = link_to "Home", root_path
+  .footer-text 
+    = link_to "Albums", albums_path
+  .footer-text
+    = link_to "Artists", artists_path
+  .footer-text
+    = link_to "Tracks", tracks_path
 
-%br/
-= link_to "Go to Tracks", tracks_path
-
-%br/
-= link_to "Back to Home", root_path

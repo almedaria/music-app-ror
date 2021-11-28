@@ -1,7 +1,7 @@
 class AlbumsController < ApplicationController
     before_action :set_album, only: [:edit, :update, :destroy]
     def index
-        @albums = Album.all
+        @albums = Album.all.with_attached_image
     end
 
     def new
@@ -10,6 +10,7 @@ class AlbumsController < ApplicationController
 
     def create
         @album = Album.new(album_params)
+        @album.image.attach(params[:album][:image])
 
         if @album.save
             flash[:notice] = "A new album has been added"
@@ -46,7 +47,7 @@ class AlbumsController < ApplicationController
     end
 
     def album_params
-        params.require(:album).permit(:name, :released, :released_at, :cover_art_url, :length, :kind)
+        params.require(:album).permit(:name, :released, :released_at, :cover_art_url, :length, :kind, :image)
     end
 
 end

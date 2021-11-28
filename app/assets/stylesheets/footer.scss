@@ -1,0 +1,17 @@
+.footer-container {
+  width: 100%;
+  z-index: 100;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 8px 0;
+  bottom: 8px;
+  position: fixed;
+}
+
+.footer-text {
+  color: #c5a6aa;
+  text-transform: uppercase;
+  letter-spacing: 00.2em;
+}

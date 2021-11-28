@@ -1,0 +1,54 @@
+.page-sub-title {
+  font-size: 30px;
+  padding: 20px 0;
+  color: #4f5c7c;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+.form-container {
+  color: #c5a6aa;
+  width: 500px;
+  margin: auto;
+  padding: 5px 0;
+}
+
+.field-container {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20px;
+  height: 30px;
+  vertical-align: middle;
+}
+.label-class {
+  width: 250px;
+  text-align: left;
+  padding-right: 30px;
+}
+
+.form-field {
+  width: 100%;
+  padding: 2px 30px;
+  display: block;
+}
+
+.radio-button-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: end;
+}
+.radio-button {
+  flex-direction: column;
+  width: 55%;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  padding: 0 5px;
+  color: aliceblue;
+}
+
+.image-field {
+  width: 100%;
+  align-items: flex-start;
+  color: #4f5c7c;
+}

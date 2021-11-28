@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: auto;
+  width: 100%;
+  background-color: #1b1e2c;
+  color: aliceblue;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+a:link {
+  color: #c5a6aa;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:visited {
+  color: #c5a6aa;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #e53851;
+  text-decoration: underline;
+}

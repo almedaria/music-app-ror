@@ -1,35 +1,40 @@
-%h1 Tracks
+.div.main-header Music App
 
-%table
-   %thread
-      %th url
-      %th Name
-      %th Credits 
-      %th Available
-  
-   %tbody
+.div.page-title Tracks
+
+.container
+  %ul.responsive-table
+    %li.table-header
+      .col.col-1
+      .col.col-1 url
+      .col.col-1 Name
+      .col.col-1 Credits
+      .col.col-1 Actions
+    %tbody
       - @tracks.each do |track|
-         %tr
-            %td
-               = track.url.truncate(150)
-            %td
-               = track.name
-            %td
-               = track.credits.truncate(150)
-            %td
-               = track.available
-            %td
-               = link_to "Edit", edit_track_path(track.id)
-               = link_to "Delete", track_path(track.id), method: :delete, data: {confirm: "Are you sure?"}
+        %li.table-row
+          .col.col-1
+            = image_tag "thumbnails/waves.png", size:"30x30"    
+          .col.col-1{"data-label" => "URL"}
+            = track.url.truncate(150)
+          .col.col-1{"data-label" => "Name"}
+            = track.name
+          .col.col-1{"data-label" => "Credits"}
+            = track.credits.truncate(150)
+          .col.col-1{"data-label" => "Actions"}
+            = link_to "Edit", edit_track_path(track.id)
+            = link_to "Delete", track_path(track.id), method: :delete, data: {confirm: "Are you sure?"}
 
 %br/
-= link_to "Add Tracks", new_track_path        
+.p.sub-button= link_to "Add Tracks", new_track_path        
 
-%br/
-= link_to "Go to Artists", artists_path
+.footer-container
+  .footer-text
+    = link_to "Home", root_path
+  .footer-text 
+    = link_to "Albums", albums_path
+  .footer-text
+    = link_to "Artists", artists_path
+  .footer-text
+    = link_to "Tracks", tracks_path
 
-%br/
-= link_to "Go to Albums", albums_path
-
-%br/
-= link_to "Back to Home", root_path

@@ -1,20 +1,31 @@
-= form_with model: @track do |f|
-  = f.label :url
-  = f.url_field :url
+= form_with model: @track, html: {class: "form-container"} do |f|
+  .field-container
+    = f.label :url, class: "label-class"
+    = f.url_field :url, class: "form-field"
+
+  .field-container
+    = f.label :name, class: "label-class"
+    = f.text_field :name, class: "form-field"
+
+  .field-container 
+    = f.label :credits, class: "label-class"
+    = f.text_area :credits, class: "form-field"
+
+  %br/
   
-  %br/
-  = f.label :name
-  = f.text_field :name
+  - @track.errors.full_messages.each do |error|
+    .flash-notice
+      = error  
 
-  %br/
 
-  = f.label :credits
-  = f.text_area :credits
-
-  %br/
-
-  = f.submit
+  = f.submit :class => "form-button"
   
-  %br/
-  = link_to "Back to Tracks", tracks_path
-  
+.footer-container
+  .footer-text
+    = link_to "Home", root_path
+  .footer-text 
+    = link_to "Albums", albums_path
+  .footer-text
+    = link_to "Artists", artists_path
+  .footer-text
+    = link_to "Tracks", tracks_path

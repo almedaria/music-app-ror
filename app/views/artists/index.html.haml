@@ -1,47 +1,44 @@
-%h1 Artists
+.div.main-header Music App
 
-%table
-   %thread
-      %th Name
-      %th Permalink
-      %th Bio
-      %th Formed at
-      -# %th Verified - add default value 
-      %th Verified at
-      %th Avatar URL 
-      %th Cover photo URL
-  
-   %tbody
+.div.page-title Artists
+
+.container
+  %ul.responsive-table
+    %li.table-header
+      .col.col-2 
+      .col.col-2 Name
+      .col.col-2 Bio
+      .col.col-2 Formed at
+      .col.col-2 Verified at
+      .col.col-2 Actions     
+    %tbody
       - @artists.each do |artist|
-         %tr
-            %td
-               = artist.name
-            %td
-               = artist.permalink
-            %td
-               = artist.bio.truncate(150)
-            %td
-               = artist.formed_at
-            -# %td
-            -#    = artist.verified 
-            %td
-               = artist.verified_at 
-            %td
-               = artist.avatar_url
-            %td
-               = artist.cover_photo_url
-            %td
-               = link_to "Edit", edit_artist_path(artist.id)
-               = link_to "Delete", artist_path(artist.id), method: :delete, data: {confirm: "Are you sure?"}
+        %li.table-row
+          .col.col-2
+            = image_tag "thumbnails/user.png", size:"30x30"
+          .col.col-2{"data-label" => "Name"}
+            = artist.name
+          .col.col-2{"data-label" => "Bio"}
+            = artist.bio.truncate(150)
+          .col.col-2{"data-label" => "Formed at"}
+            = artist.formed_at.year
+          .col.col-2{"data-label" => "Verified at"}
+            = artist.verified_at.year
+          .col.col-2{"data-label" => "Actions"}  
+            = link_to "Edit", edit_artist_path(artist.id)
+            = link_to "Delete", artist_path(artist.id), method: :delete, data: {confirm: "Are you sure?"}
 
 %br/
-= link_to "Add Artist", new_artist_path
 
-%br/
-= link_to "Go to Albums", albums_path
+.p.sub-button=link_to "Add Artist", new_artist_path  
 
-%br/
-= link_to "Go to Tracks", tracks_path
+.footer-container
+  .footer-text
+    = link_to "Home", root_path
+  .footer-text 
+    = link_to "Albums", albums_path
+  .footer-text
+    = link_to "Artists", artists_path
+  .footer-text
+    = link_to "Tracks", tracks_path
 
-%br/
-= link_to " Back to Home", root_path
